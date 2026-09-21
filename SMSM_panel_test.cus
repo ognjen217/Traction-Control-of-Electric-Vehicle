@@ -1,0 +1,4655 @@
+<ui_settings>
+    <version>2.9</version>
+    <model_locked>False</model_locked>
+    <canvas_bg_color>#ffffff</canvas_bg_color>
+    <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts.
+# NOTE: This code is always executed prior simulation start.
+
+# Variable 'SETTINGS_DIR' holds directory where loaded Panel .cus file is located.
+# Also you can call 'get_settings_dir_path()' function in any
+# Macro and Expression scripts to get the same directory.
+SETTINGS_DIR = get_settings_dir_path()
+
+# The 'add_to_python_path(folder)' function can be used to add custom folder
+# with Python files and packages to the PYTHONPATH. After folder is added, all Python 
+# files and Python packages from it can be imported into the SCADA Namespace.
+
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# Numpy module is imported as 'np'
+# Scipy module is imported as 'sp'
+# Schematic Editor model namespace is imported as 'scm'
+# Function for printing to HIL SCADA Message log is imported as 'printf'.
+
+]]></initialization_code>
+    <components>
+        <component_data>
+                <id>e3636e5156d811ecbd46e86a643fc4b0</id>
+                <name><![CDATA[Capture/Scope]]></name>
+                <type>Capture/Scope</type>
+                <description><![CDATA[]]></description>
+                <working_mode>windowed</working_mode>
+                <widget_settings>
+                    <x>320</x>
+                    <y>680</y>
+                    <width>120</width>
+                    <height>120</height>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <state>Capture</state>
+                    <layout>None</layout>
+                    <enabled>True</enabled>
+                    <virtual_signals_definitions>
+                    </virtual_signals_definitions>
+                    <presets>
+                        <active_capture_preset><![CDATA[ognjen]]></active_capture_preset>
+                        <active_scope_preset><![CDATA[Default]]></active_scope_preset>
+                        <capture name="Default">
+                            <time_interval>2.0</time_interval>
+                            <sample_rate>1000000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Grid</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[theta]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto Range</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[FL.mechanical angle]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto Range</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[FL.mechanical torque]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto Range</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[P]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[Ia]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[Ib]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[Ic]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[Ia1]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[Ib1]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[Ic1]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[Subsystem5.n1]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[Subsystem4.n]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[Subsystem5.Nr1]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[Subsystem4.Nr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>True</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[Subsystem4.n]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.1</treshold>
+                                <offset>10.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_settings>
+                                <subplots>
+                                    </subplots>
+                            </plotting_settings>
+                        </capture>
+                        <capture name="ognjen">
+                            <time_interval>20.0</time_interval>
+                            <sample_rate>200000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Grid</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[iq_driver_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[iq_driver_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[v_vehicle]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[iq_safe_FL_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[iq_safe_FR_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[road_surface_model.fl_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[road_surface_model.fr_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[muFL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[muFR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[motor_en]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>14</channel>
+                                    <name><![CDATA[SPEED_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>14</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>15</channel>
+                                    <name><![CDATA[TC_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>15</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>True</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[road_surface_model.slip_fl]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.027</treshold>
+                                <offset>50.1</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_settings>
+                                <subplots>
+                                    <subplot>
+                                        <number>1</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                                <color>#FF0000</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                                <color>#00CC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    <subplot>
+                                        <number>2</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[Subsystem4.iq_meas_FL]]></name>
+                                                <color>#0099FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Subsystem5.iq_meas_FR]]></name>
+                                                <color>#FFCC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Subsystem4.id_meas_FL]]></name>
+                                                <color>#FF00FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Subsystem5.id_meas_FR]]></name>
+                                                <color>#33CCCC</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    <subplot>
+                                        <number>3</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[iq_driver_FL]]></name>
+                                                <color>#FF0000</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[iq_driver_FR]]></name>
+                                                <color>#00CC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    <subplot>
+                                        <number>4</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[Fx_FL]]></name>
+                                                <color>#FF0000</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Fx_FR]]></name>
+                                                <color>#00CC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Te_FL]]></name>
+                                                <color>#0099FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Te_FR]]></name>
+                                                <color>#FFCC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Tload_FL]]></name>
+                                                <color>#FF00FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Tload_FR]]></name>
+                                                <color>#33CCCC</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    <subplot>
+                                        <number>5</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[FL.mechanical speed]]></name>
+                                                <color>#FF00FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[FR.mechanical speed]]></name>
+                                                <color>#33CCCC</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                                <color>#FF0000</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                                <color>#00CC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Subsystem4.Nr]]></name>
+                                                <color>#0099FF</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[Subsystem5.Nr1]]></name>
+                                                <color>#FFCC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    <subplot>
+                                        <number>6</number>
+                                        <user_x_range_mode>Zoom to fit</user_x_range_mode>
+                                        <user_x_range_min>0.0</user_x_range_min>
+                                        <user_x_range_max>0.0</user_x_range_max>
+                                        <user_y_range_mode>Zoom to fit</user_y_range_mode>
+                                        <user_y_range_min>0.0</user_y_range_min>
+                                        <user_y_range_max>0.0</user_y_range_max>
+                                        <signals>
+                                            <signal>
+                                                <name><![CDATA[muFL]]></name>
+                                                <color>#FF0000</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            <signal>
+                                                <name><![CDATA[muFR]]></name>
+                                                <color>#00CC00</color>
+                                                <line_type>solid</line_type>
+                                                <is_manual>False</is_manual>
+                                            </signal>
+                                            
+                                        </signals>
+                                    </subplot>
+                                    </subplots>
+                            </plotting_settings>
+                        </capture>
+                        <capture name="fl">
+                            <time_interval>13.66</time_interval>
+                            <sample_rate>200000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Vertical</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.omega_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[road_surface_model.omega_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>True</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[road_surface_model.v_wheel_fl]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.0</treshold>
+                                <offset>0.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_settings>
+                                <subplots>
+                                    </subplots>
+                            </plotting_settings>
+                        </capture>
+                        <capture name="test road surf">
+                            <time_interval>15.0</time_interval>
+                            <sample_rate>200000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Grid</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.omega_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.omega_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[road_surface_model.v_vehicle_]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[muFL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[muFR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[Fx_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[Fx_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[road_surface_model.fl_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[road_surface_model.fr_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[iq_driver_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>14</channel>
+                                    <name><![CDATA[iq_driver_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>14</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>15</channel>
+                                    <name><![CDATA[SPEED_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>15</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>True</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[road_surface_model.omega_fl]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.0</treshold>
+                                <offset>0.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_settings>
+                                <subplots>
+                                    </subplots>
+                            </plotting_settings>
+                        </capture>
+                        <scope name="Default">
+                            <background_color>white</background_color>
+                            <layout>Grid</layout>
+                            <legend>True</legend>
+                            <show_viewports>6</show_viewports>
+                            <decimation>11.0</decimation>
+                            <time_base>0.005</time_base>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[iq_driver_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[iq_driver_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[v_vehicle]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[iq_safe_FL_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[iq_safe_FR_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[road_surface_model.fl_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[road_surface_model.fr_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[muFL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[muFR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[motor_en]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>14</channel>
+                                    <name><![CDATA[SPEED_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>14</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>15</channel>
+                                    <name><![CDATA[TC_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>15</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>False</is_force>
+                                <type>Analog</type>
+                                <source>road_surface_model.slip_fl</source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.027</treshold>
+                                <offset>50.1</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                        </scope>
+                        </presets>
+                    <capture>
+                        <time_interval>20.0</time_interval>
+                        <sample_rate>200000.0</sample_rate>
+                        <background_color>white</background_color>
+                        <layout>Grid</layout>
+                        <legend>True</legend>
+                        <trigger>
+                            <type>Analog</type>
+                            <source>road_surface_model.slip_fl</source>
+                            <edge>Rising edge</edge>
+                            <treshold>0.027</treshold>
+                            <offset>50.1</offset>
+                            <useFirstTrigger>False</useFirstTrigger>
+                        </trigger>
+                        <analog_signals>
+                            <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[iq_driver_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[iq_driver_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[v_vehicle]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[iq_safe_FL_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[iq_safe_FR_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[road_surface_model.fl_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[road_surface_model.fr_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[muFL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[muFR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[motor_en]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>14</channel>
+                                    <name><![CDATA[SPEED_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>14</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>15</channel>
+                                    <name><![CDATA[TC_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>15</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                        </analog_signals>
+                         <digital_signals>
+                         </digital_signals>
+                    </capture>
+                    <scope>
+                        <time_base>0.005 </time_base>
+                        <background_color>white</background_color>
+                        <layout>Grid</layout>
+                        <legend>True</legend>
+                        <trigger>
+                            <mode>Auto</mode>
+                            <type>Analog</type>
+                            <source>road_surface_model.slip_fl</source>
+                            <edge>Rising edge</edge>
+                            <treshold>0.027</treshold>
+                            <offset>50.1</offset>
+                        </trigger>
+                         <analog_signals>
+                            <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[road_surface_model.slip_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[road_surface_model.slip_fr]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[iq_driver_FL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[iq_driver_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[v_vehicle]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>6</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>5</channel>
+                                    <name><![CDATA[iq_safe_FL_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>6</channel>
+                                    <name><![CDATA[iq_safe_FR_sign]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>5</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>7</channel>
+                                    <name><![CDATA[road_surface_model.fl_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>7</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>8</channel>
+                                    <name><![CDATA[road_surface_model.fr_load]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>8</row>
+                                    <viewports>
+                                        <num_viewport>4</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>9</channel>
+                                    <name><![CDATA[muFL]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>9</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>10</channel>
+                                    <name><![CDATA[muFR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>10</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>11</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_fl]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>11</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>12</channel>
+                                    <name><![CDATA[road_surface_model.v_wheel_FR]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>12</row>
+                                    <viewports>
+                                        <num_viewport>5</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>13</channel>
+                                    <name><![CDATA[motor_en]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>13</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>14</channel>
+                                    <name><![CDATA[SPEED_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>14</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>15</channel>
+                                    <name><![CDATA[TC_enable]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>15</row>
+                                    <viewports>
+                                        <num_viewport>6</num_viewport>
+                                   </viewports>
+                               </analog>
+                        </analog_signals>
+                        <digital_signals>
+                        </digital_signals>
+                    </scope>
+                </widget_settings>
+
+            </component_data>
+        <component_data>
+                <id>915eb2557a3a11f1a07bf83dc62215f3</id>
+                <name><![CDATA[road_surface_model_mu_scalefl2]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('road_surface_model.mu_scalefl', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('road_surface_model.mu_scalefl')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.8]]></inputValue>
+                <min>0.0</min>
+                <max>1.2</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>320</x>
+                    <y>872</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>9f97a7cf7a3a11f1ad06f83dc62215f3</id>
+                <name><![CDATA[road_surface_model_mu_scalefr]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('road_surface_model.mu_scalefr', inputValue)
+]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('road_surface_model.mu_scalefr')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.8]]></inputValue>
+                <min>0.0</min>
+                <max>1.2</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>320</x>
+                    <y>808</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>641fe0bc850711f19cd2bcf105c90459</id>
+                <name><![CDATA[SEQMU_auto_test]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized 21 s sequential-mu traction-control test. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[
+# Standardized SEQMU test.
+# No Python time/timer module is used.
+# Typhoon HIL wait_msec() is used to space the commands deterministically.
+#
+# Before clicking:
+#   tc_enable = 0 -> baseline
+#   tc_enable = 1 -> FOPID test
+
+SEQMU_NR = 1.10
+MU_HIGH = 0.80
+MU_LOW = 0.20
+
+# Read requested TC mode before initializing the test.
+try:
+    tc_requested = float(hil.model_read("tc_enable"))
+except Exception:
+    tc_requested = 1.0
+
+if tc_requested >= 0.5:
+    tc_requested = 1.0
+else:
+    tc_requested = 0.0
+
+# t = 0.0 s
+hil.model_write("motor_enable", 0.0)
+hil.model_write("speed_enable", 0.0)
+hil.model_write("nr", SEQMU_NR)
+hil.model_write("tc_enable", tc_requested)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf("SEQMU: START | TC={} | nr={} | mu=0.8/0.8".format(
+    int(tc_requested), SEQMU_NR))
+
+# t = 0.5 s
+hil.wait_msec(500)
+hil.model_write("motor_enable", 1.0)
+printf("SEQMU: t=0.5 s | motor ON")
+
+# t = 1.0 s
+hil.wait_msec(500)
+hil.model_write("speed_enable", 1.0)
+hil.model_write("nr", SEQMU_NR)
+hil.model_write("tc_enable", tc_requested)
+printf("SEQMU: t=1.0 s | speed ON | nr={} | TC={}".format(
+    SEQMU_NR, int(tc_requested)))
+
+# t = 4.0 s
+hil.wait_msec(3000)
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("SEQMU: t=4.0 s | road mu FL/FR = 0.2/0.8")
+
+# t = 8.0 s
+hil.wait_msec(4000)
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+printf("SEQMU: t=8.0 s | road mu FL/FR = 0.2/0.2")
+
+# t = 12.0 s
+hil.wait_msec(4000)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+printf("SEQMU: t=12.0 s | road mu FL/FR = 0.8/0.2")
+
+# t = 16.0 s
+hil.wait_msec(4000)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("SEQMU: t=16.0 s | road mu FL/FR = 0.8/0.8")
+
+# t = 20.0 s
+hil.wait_msec(4000)
+hil.model_write("speed_enable", 0.0)
+printf("SEQMU: t=20.0 s | speed OFF")
+
+# t = 20.5 s
+hil.wait_msec(500)
+hil.model_write("motor_enable", 0.0)
+printf("SEQMU: t=20.5 s | motor OFF")
+
+# t = 21.0 s
+hil.wait_msec(500)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("SEQMU: END | t=21.0 s")
+]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+# Safe reset when simulation is stopped.
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>512</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[RUN SEQMU AUTO TEST]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>aff4f91163214fe79ee95b6d62e5a2f1</id>
+                <name><![CDATA[motor_enable]]></name>
+                <type>KnobMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('motor_enable', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('motor_enable')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>320</x>
+                    <y>544</y>
+                    <width>80</width>
+                    <height>120</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>d6907056945f45b1ac49601946df040b</id>
+                <name><![CDATA[speed_enable]]></name>
+                <type>KnobMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('speed_enable', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('speed_enable')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>400</x>
+                    <y>544</y>
+                    <width>80</width>
+                    <height>120</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>50343fac405b41eebbde04f85afc2cbb</id>
+                <name><![CDATA[tc_enable]]></name>
+                <type>KnobMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('tc_enable', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('tc_enable')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.0]]></inputValue>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>480</x>
+                    <y>544</y>
+                    <width>80</width>
+                    <height>120</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>2755c5ca381d4d078c302054115811f2</id>
+                <name><![CDATA[nr]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('nr', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('nr')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>0.0</min>
+                <max>1.2</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>320</x>
+                    <y>928</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>6434e21b7dcf4684a066f38d6d3e4c72</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[
+# STEP_FL_LOW standardized test
+#
+# Purpose:
+#   isolate traction-control transient response on the FL wheel.
+#
+# Before clicking:
+#   tc_enable = 0 -> baseline
+#   tc_enable = 1 -> FOPID test
+
+NR = 1.10
+MU_HIGH = 0.80
+MU_LOW = 0.20
+
+# Read requested TC mode.
+try:
+    tc_requested = float(hil.model_read("tc_enable"))
+except Exception:
+    tc_requested = 1.0
+
+if tc_requested >= 0.5:
+    tc_requested = 1.0
+else:
+    tc_requested = 0.0
+
+# t = 0.0 s -- deterministic initial condition
+hil.model_write("motor_enable", 0.0)
+hil.model_write("speed_enable", 0.0)
+hil.model_write("nr", NR)
+hil.model_write("tc_enable", tc_requested)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf("STEP_FL_LOW: START | TC={} | nr={} | mu FL/FR=0.8/0.8".format(
+    int(tc_requested), NR))
+
+# t = 0.5 s
+hil.wait_msec(500)
+hil.model_write("motor_enable", 1.0)
+printf("STEP_FL_LOW: t=0.5 s | motor ON")
+
+# t = 1.0 s
+hil.wait_msec(500)
+hil.model_write("speed_enable", 1.0)
+hil.model_write("nr", NR)
+hil.model_write("tc_enable", tc_requested)
+printf("STEP_FL_LOW: t=1.0 s | speed ON | nr={} | TC={}".format(
+    NR, int(tc_requested)))
+
+# t = 5.0 s -- low-mu step on FL only
+hil.wait_msec(4000)
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("STEP_FL_LOW: t=5.0 s | STEP DOWN | mu FL/FR=0.2/0.8")
+
+# Hold low-mu condition for 8 seconds.
+# t = 13.0 s -- restore FL grip
+hil.wait_msec(8000)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("STEP_FL_LOW: t=13.0 s | RECOVERY | mu FL/FR=0.8/0.8")
+
+# Observe recovery for 5 seconds.
+# t = 18.0 s
+hil.wait_msec(5000)
+hil.model_write("speed_enable", 0.0)
+printf("STEP_FL_LOW: t=18.0 s | speed OFF")
+
+# t = 18.5 s
+hil.wait_msec(500)
+hil.model_write("motor_enable", 0.0)
+printf("STEP_FL_LOW: t=18.5 s | motor OFF")
+
+# t = 19.0 s
+hil.wait_msec(500)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+printf("STEP_FL_LOW: END | t=19.0 s")
+]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>560</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[RUN STEP FL LOW]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>467861d92d8e47c69382bdc542ccd380</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test1]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ================================================================
+# COMPREHENSIVE_BOUNDARY_50S
+# Comprehensive traction-control validation test
+#
+# Purpose:
+#   Stress-test the complete TC/FOPID implementation using:
+#     - high-mu operation
+#     - FL split-mu
+#     - FR split-mu
+#     - symmetric low-mu
+#     - medium-mu operation
+#     - recovery
+#     - negative torque demand
+#     - aggressive re-acceleration
+#     - rapid left/right road changes
+#     - simultaneous speed-reference and adhesion disturbance
+#
+# Recommended FOPID configuration:
+#   Kp     = 780
+#   Ki     = 4800
+#   Kd     = 25
+#   lambda = 0.40
+#   mu     = 0.70
+#   M      = 50
+#
+# Total duration: 50 s
+# ================================================================
+
+
+NR_HIGH = 1.10
+NR_MID  = 0.55
+NR_LOW  = 0.25
+NR_PRE_ACCEL = 0.35
+
+MU_HIGH = 0.80
+MU_MED  = 0.45
+MU_PART = 0.35
+MU_LOW  = 0.20
+
+
+# ------------------------------------------------
+# Preserve requested TC mode
+# ------------------------------------------------
+
+try:
+    tc_requested = float(hil.model_read("tc_enable"))
+except Exception:
+    tc_requested = 1.0
+
+if tc_requested >= 0.5:
+    tc_requested = 1.0
+else:
+    tc_requested = 0.0
+
+
+# ================================================================
+# t = 0.0 s
+# Deterministic initial condition
+# ================================================================
+
+hil.model_write("motor_enable", 0.0)
+hil.model_write("speed_enable", 0.0)
+
+hil.model_write("nr", NR_HIGH)
+hil.model_write("tc_enable", tc_requested)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf(
+    "BOUNDARY50: START | TC={} | nr={} | mu FL/FR={}/{}".format(
+        int(tc_requested), NR_HIGH, MU_HIGH, MU_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 0.5 s
+# Motor ON
+# ================================================================
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 1.0)
+
+printf("BOUNDARY50: t=0.5 | MOTOR ON")
+
+
+# ================================================================
+# t = 1.0 s
+# Speed controller ON
+# Normal acceleration on high-mu
+# ================================================================
+
+hil.wait_msec(500)
+
+hil.model_write("speed_enable", 1.0)
+hil.model_write("nr", NR_HIGH)
+hil.model_write("tc_enable", tc_requested)
+
+printf(
+    "BOUNDARY50: t=1.0 | SPEED ON | nr={} | high-mu acceleration".format(
+        NR_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 5.0 s
+# SCENARIO 1:
+# FL sudden grip loss
+#
+# Tests:
+#   - FL-only detection
+#   - independent wheel intervention
+#   - onset transient
+# ================================================================
+
+hil.wait_msec(4000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf(
+    "BOUNDARY50: t=5.0 | S1 FL LOW | mu FL/FR={}/{}".format(
+        MU_LOW, MU_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 9.0 s
+# SCENARIO 2:
+# Instantaneous split-mu reversal
+#
+# FL recovers at exactly the same time that FR loses grip.
+#
+# Tests:
+#   - fast release FL
+#   - fast activation FR
+#   - cross-wheel independence
+# ================================================================
+
+hil.wait_msec(4000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+printf(
+    "BOUNDARY50: t=9.0 | S2 SPLIT SWAP | mu FL/FR={}/{}".format(
+        MU_HIGH, MU_LOW
+    )
+)
+
+
+# ================================================================
+# t = 13.0 s
+# SCENARIO 3:
+# BOTH wheels on very low mu
+#
+# Severe symmetric traction event.
+#
+# Tests:
+#   - simultaneous FL/FR regulation
+#   - maximum TC authority
+#   - saturation / current reduction
+# ================================================================
+
+hil.wait_msec(4000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+printf(
+    "BOUNDARY50: t=13.0 | S3 BOTH LOW | mu FL/FR={}/{}".format(
+        MU_LOW, MU_LOW
+    )
+)
+
+
+# ================================================================
+# t = 17.0 s
+# SCENARIO 4:
+# Partial recovery to medium mu
+#
+# Tests:
+#   - adaptation to non-extreme road
+#   - reduction release
+#   - operation away from binary 0.2 / 0.8 cases
+# ================================================================
+
+hil.wait_msec(4000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_MED)
+hil.model_write("road_surface_model.mu_scalefr", MU_MED)
+
+printf(
+    "BOUNDARY50: t=17.0 | S4 MEDIUM MU | mu FL/FR={}/{}".format(
+        MU_MED, MU_MED
+    )
+)
+
+
+# ================================================================
+# t = 20.0 s
+# SCENARIO 5:
+# Full road recovery
+#
+# Tests:
+#   - TC release
+#   - residual reduction
+#   - recovery tail
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf(
+    "BOUNDARY50: t=20.0 | S5 FULL RECOVERY | mu FL/FR={}/{}".format(
+        MU_HIGH, MU_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 23.0 s
+# SCENARIO 6:
+# Speed reference step DOWN
+#
+# Vehicle should demand reduced / negative torque.
+#
+# Tests:
+#   - positive-torque TC gating
+#   - TC must NOT fight braking / negative Iq
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("nr", NR_MID)
+
+printf(
+    "BOUNDARY50: t=23.0 | S6 SPEED STEP DOWN | nr={}".format(
+        NR_MID
+    )
+)
+
+
+# ================================================================
+# t = 26.0 s
+# SCENARIO 7:
+# Stronger negative torque demand
+#
+# Tests:
+#   - boundary negative-slip behavior
+#   - TC inactivity for braking torque
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("nr", NR_LOW)
+
+printf(
+    "BOUNDARY50: t=26.0 | S7 STRONG DECELERATION | nr={}".format(
+        NR_LOW
+    )
+)
+
+
+# ================================================================
+# t = 29.0 s
+# SCENARIO 8:
+# Aggressive re-acceleration on GOOD road
+#
+# Establish control reference before next adhesion event.
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("nr", NR_HIGH)
+
+printf(
+    "BOUNDARY50: t=29.0 | S8 RE-ACCEL HIGH MU | nr={}".format(
+        NR_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 32.0 s
+# SCENARIO 9:
+# BOTH wheels abruptly lose grip during strong acceleration
+#
+# One of the most severe TC scenarios.
+#
+# Tests:
+#   - simultaneous high torque demand
+#   - large slip transient
+#   - TC authority
+#   - stabilization
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+printf(
+    "BOUNDARY50: t=32.0 | S9 FULL LOW-MU DURING ACCEL | mu FL/FR={}/{}".format(
+        MU_LOW, MU_LOW
+    )
+)
+
+
+# ================================================================
+# t = 36.0 s
+# SCENARIO 10:
+# FL partially recovers, FR completely recovers
+#
+# Tests intermediate asymmetric road.
+# ================================================================
+
+hil.wait_msec(4000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_PART)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf(
+    "BOUNDARY50: t=36.0 | S10 PARTIAL SPLIT | mu FL/FR={}/{}".format(
+        MU_PART, MU_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 38.0 s
+# Reverse partial split
+# ================================================================
+
+hil.wait_msec(2000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_PART)
+
+printf(
+    "BOUNDARY50: t=38.0 | S10b PARTIAL SPLIT SWAP | mu FL/FR={}/{}".format(
+        MU_HIGH, MU_PART
+    )
+)
+
+
+# ================================================================
+# t = 39.0 s
+#
+# SCENARIO 11:
+# RAPID ROAD-SURFACE SWITCHING
+#
+# 500 ms surface changes.
+#
+# Tests:
+#   - hysteresis
+#   - activation/deactivation chatter
+#   - FL/FR state independence
+#   - derivative sensitivity
+# ================================================================
+
+hil.wait_msec(1000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf("BOUNDARY50: t=39.0 | S11 RAPID 1 | mu FL/FR=0.2/0.8")
+
+
+# t = 39.5
+
+hil.wait_msec(500)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+printf("BOUNDARY50: t=39.5 | S11 RAPID 2 | mu FL/FR=0.8/0.2")
+
+
+# t = 40.0
+
+hil.wait_msec(500)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+printf("BOUNDARY50: t=40.0 | S11 RAPID 3 | mu FL/FR=0.2/0.2")
+
+
+# t = 40.5
+
+hil.wait_msec(500)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf("BOUNDARY50: t=40.5 | S11 RAPID 4 | mu FL/FR=0.8/0.8")
+
+
+# ================================================================
+# t = 41.0 s
+# Short recovery / observation
+# ================================================================
+
+hil.wait_msec(500)
+
+printf("BOUNDARY50: t=41.0 | RAPID SWITCH COMPLETE")
+
+
+# ================================================================
+# t = 43.0 s
+#
+# SCENARIO 12:
+# Strong speed-reference reduction on GOOD road
+#
+# Prepare vehicle for final worst-case event.
+# ================================================================
+
+hil.wait_msec(2000)
+
+hil.model_write("nr", NR_PRE_ACCEL)
+
+printf(
+    "BOUNDARY50: t=43.0 | S12 PRE-FINAL DECEL | nr={}".format(
+        NR_PRE_ACCEL
+    )
+)
+
+
+# ================================================================
+# t = 45.0 s
+#
+# SCENARIO 13 — COMBINED WORST-CASE EVENT
+#
+# Simultaneously:
+#   1. command strong acceleration
+#   2. drop BOTH road surfaces to low mu
+#
+# Tests:
+#   - simultaneous reference disturbance
+#   - simultaneous plant disturbance
+#   - maximum positive torque request
+#   - large slip onset
+#   - FOPID transient robustness
+# ================================================================
+
+hil.wait_msec(2000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_LOW)
+hil.model_write("road_surface_model.mu_scalefr", MU_LOW)
+
+hil.model_write("nr", NR_HIGH)
+
+printf(
+    "BOUNDARY50: t=45.0 | S13 WORST CASE | nr={} | mu FL/FR={}/{}".format(
+        NR_HIGH, MU_LOW, MU_LOW
+    )
+)
+
+
+# ================================================================
+# t = 48.0 s
+#
+# FINAL RECOVERY
+# ================================================================
+
+hil.wait_msec(3000)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf(
+    "BOUNDARY50: t=48.0 | FINAL RECOVERY | mu FL/FR={}/{}".format(
+        MU_HIGH, MU_HIGH
+    )
+)
+
+
+# ================================================================
+# t = 49.0 s
+# Speed regulator OFF
+# ================================================================
+
+hil.wait_msec(1000)
+
+hil.model_write("speed_enable", 0.0)
+
+printf("BOUNDARY50: t=49.0 | SPEED OFF")
+
+
+# ================================================================
+# t = 49.5 s
+# Motor OFF
+# ================================================================
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 0.0)
+
+printf("BOUNDARY50: t=49.5 | MOTOR OFF")
+
+
+# ================================================================
+# t = 50.0 s
+# Safe reset
+# ================================================================
+
+hil.wait_msec(500)
+
+hil.model_write("nr", 0.0)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+printf("BOUNDARY50: END | t=50.0 s")]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>608</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[COMPREHENSIVE_BOUNDARY_50S]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>73e5c4fdb7324a0aa9c5fd26be6b85be</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test2]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# AW01_SAT_RELEASE
+# Anti-windup / saturation recovery test
+#
+# 0.0 s   reset state, mu = 0.8 / 0.8, nr = 1.10
+# 0.5 s   motor ON
+# 1.0 s   speed control ON
+# 2.5 s   mu = 0.05 / 0.05  -> force severe slip / saturation
+# 7.5 s   mu = 0.8 / 0.8    -> sudden release
+# 12.0 s  speed control OFF
+# 12.5 s  motor OFF
+# 13.0 s  reset references
+# ============================================================
+
+NR_HIGH = 1.10
+
+MU_HIGH = 0.80
+MU_SAT  = 0.05
+
+
+# ------------------------------------------------------------
+# Initial state - t = 0.0 s
+# ------------------------------------------------------------
+
+hil.model_write("motor_enable", 0)
+hil.model_write("speed_enable", 0)
+
+hil.model_write("nr", NR_HIGH)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+# TC must be enabled during the whole AW test
+hil.model_write("tc_enable", 1)
+
+print("AW01 | t = 0.0 s | RESET | mu = 0.80 / 0.80 | nr = 1.10")
+
+
+# ------------------------------------------------------------
+# t = 0.5 s - motor ON
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 1)
+
+print("AW01 | t = 0.5 s | MOTOR ON")
+
+
+# ------------------------------------------------------------
+# t = 1.0 s - speed control ON
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("speed_enable", 1)
+
+print("AW01 | t = 1.0 s | SPEED CONTROL ON")
+
+
+# ------------------------------------------------------------
+# t = 2.5 s - severe low-mu event
+# ------------------------------------------------------------
+
+hil.wait_msec(1500)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_SAT)
+hil.model_write("road_surface_model.mu_scalefr", MU_SAT)
+
+print("AW01 | t = 2.5 s | SATURATION EVENT | mu = 0.05 / 0.05")
+
+
+# ------------------------------------------------------------
+# Hold severe low-mu condition for 5 s
+# t = 2.5 ... 7.5 s
+# ------------------------------------------------------------
+
+hil.wait_msec(5000)
+
+
+# ------------------------------------------------------------
+# t = 7.5 s - sudden recovery
+#
+# IMPORTANT:
+# motor_enable stays ON
+# speed_enable stays ON
+# nr stays at 1.10
+#
+# Therefore the controller state is NOT reset.
+# ------------------------------------------------------------
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+print("AW01 | t = 7.5 s | RELEASE | mu = 0.80 / 0.80")
+
+
+# ------------------------------------------------------------
+# Recovery observation window
+# t = 7.5 ... 12.0 s
+# ------------------------------------------------------------
+
+hil.wait_msec(4500)
+
+
+# ------------------------------------------------------------
+# t = 12.0 s - speed control OFF
+# ------------------------------------------------------------
+
+hil.model_write("speed_enable", 0)
+
+print("AW01 | t = 12.0 s | SPEED CONTROL OFF")
+
+
+# ------------------------------------------------------------
+# t = 12.5 s - motor OFF
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 0)
+
+print("AW01 | t = 12.5 s | MOTOR OFF")
+
+
+# ------------------------------------------------------------
+# t = 13.0 s - return SCADA references to safe initial state
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("nr", 0.0)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+print("AW01 | t = 13.0 s | TEST COMPLETE")]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>656</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[AW01_SAT_RELEASE]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>91739014bd104e4ab56be95bb80ecfd7</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test3]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# AW01_SAT_RELEASE
+# Anti-windup / saturation recovery test
+#
+# 0.0 s   reset state, mu = 0.8 / 0.8, nr = 1.10
+# 0.5 s   motor ON
+# 1.0 s   speed control ON
+# 2.5 s   mu = 0.05 / 0.05  -> force severe slip / saturation
+# 7.5 s   mu = 0.8 / 0.8    -> sudden release
+# 12.0 s  speed control OFF
+# 12.5 s  motor OFF
+# 13.0 s  reset references
+# ============================================================
+
+NR_HIGH = 1.10
+
+MU_HIGH = 0.80
+MU_SAT  = 0.05
+
+
+# ------------------------------------------------------------
+# Initial state - t = 0.0 s
+# ------------------------------------------------------------
+
+hil.model_write("motor_enable", 0)
+hil.model_write("speed_enable", 0)
+
+hil.model_write("nr", NR_HIGH)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+# TC must be enabled during the whole AW test
+hil.model_write("tc_enable", 1)
+
+print("AW01 | t = 0.0 s | RESET | mu = 0.80 / 0.80 | nr = 1.10")
+
+
+# ------------------------------------------------------------
+# t = 0.5 s - motor ON
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 1)
+
+print("AW01 | t = 0.5 s | MOTOR ON")
+
+
+# ------------------------------------------------------------
+# t = 1.0 s - speed control ON
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("speed_enable", 1)
+
+print("AW01 | t = 1.0 s | SPEED CONTROL ON")
+
+
+# ------------------------------------------------------------
+# t = 2.5 s - severe low-mu event
+# ------------------------------------------------------------
+
+hil.wait_msec(1500)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_SAT)
+hil.model_write("road_surface_model.mu_scalefr", MU_SAT)
+
+print("AW01 | t = 2.5 s | SATURATION EVENT | mu = 0.05 / 0.05")
+
+
+# ------------------------------------------------------------
+# Hold severe low-mu condition for 5 s
+# t = 2.5 ... 7.5 s
+# ------------------------------------------------------------
+
+hil.wait_msec(5000)
+
+
+# ------------------------------------------------------------
+# t = 7.5 s - sudden recovery
+#
+# IMPORTANT:
+# motor_enable stays ON
+# speed_enable stays ON
+# nr stays at 1.10
+#
+# Therefore the controller state is NOT reset.
+# ------------------------------------------------------------
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+print("AW01 | t = 7.5 s | RELEASE | mu = 0.80 / 0.80")
+
+
+# ------------------------------------------------------------
+# Recovery observation window
+# t = 7.5 ... 12.0 s
+# ------------------------------------------------------------
+
+hil.wait_msec(4500)
+
+
+# ------------------------------------------------------------
+# t = 12.0 s - speed control OFF
+# ------------------------------------------------------------
+
+hil.model_write("speed_enable", 0)
+
+print("AW01 | t = 12.0 s | SPEED CONTROL OFF")
+
+
+# ------------------------------------------------------------
+# t = 12.5 s - motor OFF
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("motor_enable", 0)
+
+print("AW01 | t = 12.5 s | MOTOR OFF")
+
+
+# ------------------------------------------------------------
+# t = 13.0 s - return SCADA references to safe initial state
+# ------------------------------------------------------------
+
+hil.wait_msec(500)
+
+hil.model_write("nr", 0.0)
+
+hil.model_write("road_surface_model.mu_scalefl", MU_HIGH)
+hil.model_write("road_surface_model.mu_scalefr", MU_HIGH)
+
+print("AW01 | t = 13.0 s | TEST COMPLETE")]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>704</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[AW01_SAT_RELEASE]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>548da511382146389cf87f86d20018ae</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test4]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# N01_NOISE
+# Slip measurement noise sensitivity test
+#
+# 0.0 s   reset, mu = 0.8 / 0.8, nr = 1.10
+# 0.5 s   motor ON
+# 1.0 s   speed control ON
+# 5.0 s   STEP_FL_LOW: mu = 0.2 / 0.8
+# 13.0 s  recovery: mu = 0.8 / 0.8
+# 18.0 s  speed control OFF
+# 18.5 s  motor OFF
+# 19.0 s  reset references / noise
+#
+# Recommended runs:
+#   NOISE_STD = 0.000
+#   NOISE_STD = 0.002
+#   NOISE_STD = 0.005
+#   NOISE_STD = 0.010
+# ============================================================
+
+
+NR_HIGH = 1.10
+
+MU_HIGH = 0.80
+MU_LOW  = 0.20
+
+# ============================================================
+# SELECT NOISE LEVEL FOR THIS RUN
+# ============================================================
+
+NOISE_STD = 0.005
+
+
+# ============================================================
+# t = 0.0 s
+# Initial state
+# ============================================================
+
+hil.model_write("motor_enable", 0)
+hil.model_write("speed_enable", 0)
+
+hil.model_write("nr", NR_HIGH)
+
+hil.model_write(
+    "road_surface_model.mu_scalefl",
+    MU_HIGH
+)
+
+hil.model_write(
+    "road_surface_model.mu_scalefr",
+    MU_HIGH
+)
+
+hil.model_write("tc_enable", 1)
+
+
+# ------------------------------------------------------------
+# Set measurement-noise level
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.noise std",
+    NOISE_STD
+)
+
+
+# ------------------------------------------------------------
+# Deterministically reset PRNG
+#
+# This ensures that PID and FOPID receive the same
+# pseudo-random noise sequence for the same NOISE_STD.
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+
+print(
+    "N01 | t = 0.0 s | RESET | "
+    "mu = 0.80 / 0.80 | "
+    "nr = 1.10 | "
+    "noise sigma = {:.4f}".format(NOISE_STD)
+)
+
+
+# ============================================================
+# t = 0.5 s
+# Motor ON
+#
+# 10 ms already elapsed during PRNG reset,
+# therefore wait another 490 ms.
+# ============================================================
+
+hil.wait_msec(490)
+
+hil.model_write(
+    "motor_enable",
+    1
+)
+
+print(
+    "N01 | t = 0.5 s | MOTOR ON"
+)
+
+
+# ============================================================
+# t = 1.0 s
+# Speed control ON
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "speed_enable",
+    1
+)
+
+print(
+    "N01 | t = 1.0 s | SPEED CONTROL ON"
+)
+
+
+# ============================================================
+# t = 5.0 s
+# STEP_FL_LOW
+#
+# FL -> low mu
+# FR -> remains high mu
+# ============================================================
+
+hil.wait_msec(4000)
+
+hil.model_write(
+    "road_surface_model.mu_scalefl",
+    MU_LOW
+)
+
+hil.model_write(
+    "road_surface_model.mu_scalefr",
+    MU_HIGH
+)
+
+print(
+    "N01 | t = 5.0 s | STEP_FL_LOW | "
+    "mu = 0.20 / 0.80 | "
+    "noise sigma = {:.4f}".format(NOISE_STD)
+)
+
+
+# ============================================================
+# t = 5.0 ... 13.0 s
+# Sustained low-mu interval
+# ============================================================
+
+hil.wait_msec(8000)
+
+
+# ============================================================
+# t = 13.0 s
+# Recovery
+# ============================================================
+
+hil.model_write(
+    "road_surface_model.mu_scalefl",
+    MU_HIGH
+)
+
+hil.model_write(
+    "road_surface_model.mu_scalefr",
+    MU_HIGH
+)
+
+print(
+    "N01 | t = 13.0 s | RECOVERY | "
+    "mu = 0.80 / 0.80"
+)
+
+
+# ============================================================
+# t = 18.0 s
+# Speed control OFF
+# ============================================================
+
+hil.wait_msec(5000)
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+print(
+    "N01 | t = 18.0 s | SPEED CONTROL OFF"
+)
+
+
+# ============================================================
+# t = 18.5 s
+# Motor OFF
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+print(
+    "N01 | t = 18.5 s | MOTOR OFF"
+)
+
+
+# ============================================================
+# t = 19.0 s
+# Return model to clean initial state
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "nr",
+    0.0
+)
+
+hil.model_write(
+    "road_surface_model.mu_scalefl",
+    MU_HIGH
+)
+
+hil.model_write(
+    "road_surface_model.mu_scalefr",
+    MU_HIGH
+)
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+# Reset PRNG again so model is left in deterministic state
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+print(
+    "N01 | t = 19.0 s | TEST COMPLETE"
+)]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>752</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[NOICE SCENARIO]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>b65a20d5cea04180976ac10aef39f69b</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test5]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# V02_RAPID_SWITCH_HIGH_TORQUE
+#
+# Goal:
+#   Stress-test TC activation/deactivation, hysteresis and
+#   per-wheel selectivity during rapid road-surface changes
+#   while positive drive torque demand is high.
+#
+# Timeline:
+#
+# 0.0 s   reset
+#         mu = 0.80 / 0.80
+#         nr = 0.35
+#         motor OFF
+#         speed control OFF
+#
+# 0.5 s   motor ON
+# 1.0 s   speed control ON
+#
+# 4.5 s   nr -> 1.10
+#         creates strong positive acceleration / torque demand
+#
+# 5.0 s   rapid road switching starts
+#         dwell = 250 ms
+#
+# 8.5 s   final recovery, mu = 0.80 / 0.80
+#
+# 11.0 s  speed control OFF
+# 11.5 s  motor OFF
+# 12.0 s  reset
+# ============================================================
+
+
+NR_LOW  = 0.35
+NR_HIGH = 1.10
+
+MU_HIGH = 0.80
+MU_LOW  = 0.20
+
+DWELL_MS = 250
+
+
+# ============================================================
+# Helper
+# ============================================================
+
+def set_mu(mu_fl, mu_fr, label):
+    hil.model_write(
+        "road_surface_model.mu_scalefl",
+        mu_fl
+    )
+
+    hil.model_write(
+        "road_surface_model.mu_scalefr",
+        mu_fr
+    )
+
+    print(
+        "V02 | {} | mu = {:.2f} / {:.2f}".format(
+            label,
+            mu_fl,
+            mu_fr
+        )
+    )
+
+
+# ============================================================
+# t = 0.0 s
+# Initial state
+# ============================================================
+
+hil.model_write("motor_enable", 0)
+hil.model_write("speed_enable", 0)
+hil.model_write("tc_enable", 1)
+
+hil.model_write("nr", NR_LOW)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 0.00 s | INITIAL"
+)
+
+
+# ------------------------------------------------------------
+# Disable measurement noise for this experiment
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+# Reset PRNG / noise model
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+
+# ============================================================
+# t = 0.5 s
+# Motor ON
+# ============================================================
+
+hil.wait_msec(490)
+
+hil.model_write(
+    "motor_enable",
+    1
+)
+
+print(
+    "V02 | t = 0.50 s | MOTOR ON"
+)
+
+
+# ============================================================
+# t = 1.0 s
+# Speed control ON
+#
+# Vehicle first settles toward lower speed reference.
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "speed_enable",
+    1
+)
+
+print(
+    "V02 | t = 1.00 s | SPEED CONTROL ON | nr = 0.35"
+)
+
+
+# ============================================================
+# t = 4.5 s
+# Large positive speed-demand step
+# ============================================================
+
+hil.wait_msec(3500)
+
+hil.model_write(
+    "nr",
+    NR_HIGH
+)
+
+print(
+    "V02 | t = 4.50 s | HIGH TORQUE REQUEST | nr = 1.10"
+)
+
+
+# Allow 500 ms for the speed regulator to establish
+# a strong positive q-current request.
+hil.wait_msec(500)
+
+
+# ============================================================
+# RAPID SWITCHING SEQUENCE
+# ============================================================
+
+
+# ------------------------------------------------------------
+# t = 5.00 s
+# FL loses grip
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_HIGH,
+    "t = 5.00 s | FL LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 5.25 s
+# Split-mu swaps to FR
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_LOW,
+    "t = 5.25 s | FR LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 5.50 s
+# Both wheels low
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_LOW,
+    "t = 5.50 s | BOTH LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 5.75 s
+# Full recovery
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 5.75 s | BOTH HIGH"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ============================================================
+# SECOND RAPID CYCLE
+# ============================================================
+
+
+# ------------------------------------------------------------
+# t = 6.00 s
+# FR low first
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_LOW,
+    "t = 6.00 s | FR LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 6.25 s
+# Immediate swap to FL
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_HIGH,
+    "t = 6.25 s | FL LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 6.50 s
+# Both low
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_LOW,
+    "t = 6.50 s | BOTH LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 6.75 s
+# Both high
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 6.75 s | BOTH HIGH"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ============================================================
+# THIRD SEQUENCE
+#
+# Separate short disturbances to specifically exercise
+# activation -> release -> activation behavior.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# t = 7.00 s
+# FL low
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_HIGH,
+    "t = 7.00 s | FL LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 7.25 s
+# Recovery
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 7.25 s | BOTH HIGH"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 7.50 s
+# FR low
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_LOW,
+    "t = 7.50 s | FR LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 7.75 s
+# Recovery
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 7.75 s | BOTH HIGH"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 8.00 s
+# Final symmetric low-mu disturbance
+# ------------------------------------------------------------
+
+set_mu(
+    MU_LOW,
+    MU_LOW,
+    "t = 8.00 s | BOTH LOW"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ------------------------------------------------------------
+# t = 8.25 s
+# Final release
+# ------------------------------------------------------------
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 8.25 s | FINAL RELEASE"
+)
+
+hil.wait_msec(DWELL_MS)
+
+
+# ============================================================
+# t = 8.50 s
+# Stable recovery period
+# ============================================================
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 8.50 s | RECOVERY WINDOW"
+)
+
+
+# ============================================================
+# t = 11.0 s
+# Speed control OFF
+# ============================================================
+
+hil.wait_msec(2500)
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+print(
+    "V02 | t = 11.00 s | SPEED CONTROL OFF"
+)
+
+
+# ============================================================
+# t = 11.5 s
+# Motor OFF
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+print(
+    "V02 | t = 11.50 s | MOTOR OFF"
+)
+
+
+# ============================================================
+# t = 12.0 s
+# Return system to clean initial state
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "nr",
+    0.0
+)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 12.00 s | RESET"
+)
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+print(
+    "V02 | TEST COMPLETE"
+)]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>800</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[V02_RAPID_SWITCH_HIGH_TORQUE]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>302306486eff4099918d2f0a5e2a2598</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test6]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# TE01_TRACTION_EFFICIENCY
+#
+# Traction-performance / traction-efficiency test
+#
+# Timeline:
+#
+# 0.0 s   reset
+#         mu = 0.80 / 0.80
+#         nr = 0.35
+#         motor OFF
+#         speed control OFF
+#         noise OFF
+#
+# 0.5 s   motor ON
+#
+# 1.0 s   speed control ON
+#         vehicle accelerates toward low initial setpoint
+#
+# 5.0 s   TRACTION TEST START:
+#         nr -> 1.10
+#         mu -> 0.20 / 0.20
+#
+# 5.0 ... 11.0 s
+#         low-mu acceleration window
+#
+# 11.0 s  recovery:
+#         mu -> 0.80 / 0.80
+#
+# 13.0 s  speed control OFF
+#
+# 13.5 s  motor OFF
+#
+# 14.0 s  reset
+# ============================================================
+
+
+# ============================================================
+# PARAMETERS
+# ============================================================
+
+NR_INITIAL = 0.35
+NR_HIGH    = 1.10
+
+MU_HIGH = 0.80
+MU_TEST = 0.20
+
+
+# ============================================================
+# Helper
+# ============================================================
+
+def set_mu(mu_fl, mu_fr, label):
+    hil.model_write(
+        "road_surface_model.mu_scalefl",
+        mu_fl
+    )
+
+    hil.model_write(
+        "road_surface_model.mu_scalefr",
+        mu_fr
+    )
+
+    print(
+        "TE01 | {} | mu = {:.2f} / {:.2f}".format(
+            label,
+            mu_fl,
+            mu_fr
+        )
+    )
+
+
+# ============================================================
+# t = 0.0 s
+# Clean initial state
+# ============================================================
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+hil.model_write(
+    "tc_enable",
+    1
+)
+
+hil.model_write(
+    "nr",
+    NR_INITIAL
+)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 0.00 s | INITIAL"
+)
+
+
+# ------------------------------------------------------------
+# Disable measurement noise
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+
+# ------------------------------------------------------------
+# Deterministically reset noise model / PRNG
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+
+print(
+    "TE01 | t = 0.00 s | RESET | "
+    "nr = {:.2f}".format(NR_INITIAL)
+)
+
+
+# ============================================================
+# t = 0.5 s
+# Motor ON
+#
+# 10 ms already elapsed during reset.
+# ============================================================
+
+hil.wait_msec(490)
+
+hil.model_write(
+    "motor_enable",
+    1
+)
+
+print(
+    "TE01 | t = 0.50 s | MOTOR ON"
+)
+
+
+# ============================================================
+# t = 1.0 s
+# Speed control ON
+#
+# Vehicle settles toward lower initial speed reference.
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "speed_enable",
+    1
+)
+
+print(
+    "TE01 | t = 1.00 s | "
+    "SPEED CONTROL ON | "
+    "nr = {:.2f}".format(NR_INITIAL)
+)
+
+
+# ============================================================
+# t = 5.0 s
+# TRACTION EFFICIENCY TEST START
+#
+# In the same instant:
+#
+#   1) increase speed demand
+#   2) reduce road friction on both driven wheels
+#
+# This creates a strong positive torque demand while traction
+# is limited by the road surface.
+# ============================================================
+
+hil.wait_msec(4000)
+
+hil.model_write(
+    "nr",
+    NR_HIGH
+)
+
+set_mu(
+    MU_TEST,
+    MU_TEST,
+    "t = 5.00 s | TRACTION TEST START"
+)
+
+print(
+    "TE01 | t = 5.00 s | "
+    "nr: {:.2f} -> {:.2f}".format(
+        NR_INITIAL,
+        NR_HIGH
+    )
+)
+
+
+# ============================================================
+# t = 5.0 ... 11.0 s
+#
+# Main traction-performance measurement window.
+#
+# Important analysis windows:
+#
+#   5.0 ... 9.0 s   = first 4 seconds
+#   5.0 ... 11.0 s  = full 6 seconds
+#
+# ============================================================
+
+hil.wait_msec(6000)
+
+
+# ============================================================
+# t = 11.0 s
+# Restore high-mu road
+# ============================================================
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 11.00 s | RECOVERY"
+)
+
+
+# ============================================================
+# t = 11.0 ... 13.0 s
+# Recovery observation
+# ============================================================
+
+hil.wait_msec(2000)
+
+
+# ============================================================
+# t = 13.0 s
+# Speed control OFF
+# ============================================================
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+print(
+    "TE01 | t = 13.00 s | SPEED CONTROL OFF"
+)
+
+
+# ============================================================
+# t = 13.5 s
+# Motor OFF
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+print(
+    "TE01 | t = 13.50 s | MOTOR OFF"
+)
+
+
+# ============================================================
+# t = 14.0 s
+# Return system to clean state
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "nr",
+    0.0
+)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 14.00 s | RESET"
+)
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+print(
+    "TE01 | TEST COMPLETE"
+)]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>848</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[TE01_TRACTION_EFFICIENCY]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>a6da8cc2a5714991ae21b03db6182830</id>
+                <name><![CDATA[STEP_FL_LOW_auto_test7]]></name>
+                <type>Macro</type>
+                <description><![CDATA[Standardized single-wheel low-mu step test. FL: 0.8 -> 0.2 -> 0.8, FR remains at 0.8. Set tc_enable to 0 or 1 before pressing RUN.]]></description>
+                <on_click_code active="True"><![CDATA[# ============================================================
+# SR01_STEP_RESPONSE_STEADY_STATE
+#
+# Purpose:
+#   Measure:
+#       - steady-state error
+#       - control rise time
+#       - slip capture time
+#       - settling time
+#       - overshoot / peak slip
+#       - steady-state oscillation
+#       - current oscillation
+#
+# Timeline:
+#
+# 0.0 s   reset
+#         mu = 0.80 / 0.80
+#         nr = 0.35
+#         motor OFF
+#         speed control OFF
+#         noise OFF
+#
+# 0.5 s   motor ON
+#
+# 1.0 s   speed control ON
+#         vehicle settles toward low initial speed
+#
+# 5.0 s   STEP:
+#         nr -> 1.10
+#         mu -> 0.20 / 0.20
+#
+# 5.0 ... 15.0 s
+#         sustained low-mu/high-torque condition
+#
+# 12.0 ... 15.0 s
+#         nominal steady-state analysis window
+#
+# 15.0 s  recovery:
+#         mu -> 0.80 / 0.80
+#
+# 18.0 s  speed control OFF
+#
+# 18.5 s  motor OFF
+#
+# 19.0 s  reset
+# ============================================================
+
+
+# ============================================================
+# PARAMETERS
+# ============================================================
+
+NR_INITIAL = 0.35
+NR_HIGH    = 1.10
+
+MU_HIGH = 0.80
+MU_TEST = 0.20
+
+
+# ============================================================
+# Helper
+# ============================================================
+
+def set_mu(mu_fl, mu_fr, label):
+
+    hil.model_write(
+        "road_surface_model.mu_scalefl",
+        mu_fl
+    )
+
+    hil.model_write(
+        "road_surface_model.mu_scalefr",
+        mu_fr
+    )
+
+    print(
+        "SR01 | {} | mu = {:.2f} / {:.2f}".format(
+            label,
+            mu_fl,
+            mu_fr
+        )
+    )
+
+
+# ============================================================
+# t = 0.0 s
+# Initial state
+# ============================================================
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+hil.model_write(
+    "tc_enable",
+    1
+)
+
+hil.model_write(
+    "nr",
+    NR_INITIAL
+)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 0.00 s | INITIAL"
+)
+
+
+# ------------------------------------------------------------
+# Measurement noise OFF
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+
+# ------------------------------------------------------------
+# Deterministic reset of noise model
+# ------------------------------------------------------------
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+
+print(
+    "SR01 | t = 0.00 s | RESET | "
+    "nr = {:.2f}".format(NR_INITIAL)
+)
+
+
+# ============================================================
+# t = 0.5 s
+# Motor ON
+# ============================================================
+
+hil.wait_msec(490)
+
+hil.model_write(
+    "motor_enable",
+    1
+)
+
+print(
+    "SR01 | t = 0.50 s | MOTOR ON"
+)
+
+
+# ============================================================
+# t = 1.0 s
+# Speed control ON
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "speed_enable",
+    1
+)
+
+print(
+    "SR01 | t = 1.00 s | "
+    "SPEED CONTROL ON | "
+    "nr = {:.2f}".format(NR_INITIAL)
+)
+
+
+# ============================================================
+# t = 1.0 ... 5.0 s
+# Initial operating-point stabilization
+# ============================================================
+
+hil.wait_msec(4000)
+
+
+# ============================================================
+# t = 5.0 s
+# MAIN STEP
+#
+# Simultaneously:
+#
+#   nr: 0.35 -> 1.10
+#   mu: 0.80 -> 0.20
+#
+# Creates strong positive drive-torque demand and sustained
+# traction-control operation.
+# ============================================================
+
+hil.model_write(
+    "nr",
+    NR_HIGH
+)
+
+set_mu(
+    MU_TEST,
+    MU_TEST,
+    "t = 5.00 s | MAIN STEP"
+)
+
+print(
+    "SR01 | t = 5.00 s | "
+    "nr: {:.2f} -> {:.2f}".format(
+        NR_INITIAL,
+        NR_HIGH
+    )
+)
+
+
+# ============================================================
+# t = 5.0 ... 15.0 s
+#
+# Long observation window
+#
+# Recommended analysis:
+#
+#   5.0 ... 7.0 s
+#       early transient
+#
+#   5.0 ... 15.0 s
+#       complete disturbance response
+#
+#   12.0 ... 15.0 s
+#       steady-state / oscillation analysis
+#
+# ============================================================
+
+hil.wait_msec(10000)
+
+
+# ============================================================
+# t = 15.0 s
+# Recovery
+# ============================================================
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 15.00 s | RECOVERY"
+)
+
+
+# ============================================================
+# t = 15.0 ... 18.0 s
+# Recovery observation
+# ============================================================
+
+hil.wait_msec(3000)
+
+
+# ============================================================
+# t = 18.0 s
+# Speed control OFF
+# ============================================================
+
+hil.model_write(
+    "speed_enable",
+    0
+)
+
+print(
+    "SR01 | t = 18.00 s | SPEED CONTROL OFF"
+)
+
+
+# ============================================================
+# t = 18.5 s
+# Motor OFF
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "motor_enable",
+    0
+)
+
+print(
+    "SR01 | t = 18.50 s | MOTOR OFF"
+)
+
+
+# ============================================================
+# t = 19.0 s
+# Reset system
+# ============================================================
+
+hil.wait_msec(500)
+
+hil.model_write(
+    "nr",
+    0.0
+)
+
+set_mu(
+    MU_HIGH,
+    MU_HIGH,
+    "t = 19.00 s | RESET"
+)
+
+hil.model_write(
+    "road_surface_model.noise std",
+    0.0
+)
+
+hil.model_write(
+    "road_surface_model.reset",
+    1
+)
+
+hil.wait_msec(10)
+
+hil.model_write(
+    "road_surface_model.reset",
+    0
+)
+
+print(
+    "SR01 | TEST COMPLETE"
+)]]></on_click_code>
+                <on_start_code active="False"><![CDATA[
+]]></on_start_code>
+                <on_timer_code active="False"><![CDATA[
+]]></on_timer_code>
+                <run_each>250</run_each>
+                <on_stop_code active="True"><![CDATA[
+hil.model_write("speed_enable", 0.0)
+hil.model_write("motor_enable", 0.0)
+hil.model_write("nr", 0.0)
+hil.model_write("road_surface_model.mu_scalefl", 0.8)
+hil.model_write("road_surface_model.mu_scalefr", 0.8)
+]]></on_stop_code>
+                <widget_settings>
+                    <x>640</x>
+                    <y>888</y>
+                    <width>200</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[1]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[SR01_STEP_RESPONSE_STEADY_STATE]]></label>
+                    <use_label>True</use_label>
+                    <enabled>True</enabled>
+                </widget_settings>
+            </component_data>
+        </components>
+</ui_settings>

@@ -1,0 +1,5 @@
+-r "./model sistema/PSO_FOPID/requirements.txt"
+h5py>=3.10,<4
+pandas>=2.1,<3
+scipy>=1.11,<2
+pytest>=8,<9
